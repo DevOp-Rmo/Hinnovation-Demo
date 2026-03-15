@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hinnovation | Software Product Development</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Hinnovation - A Software Product Development Organization providing elegant, high-end innovative integrated research software products like Educare, BookMall, and BenchMark.">
+    <meta name="keywords" content="Hinnovation, software development, Educare, BookMall, Kolkata software">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css?v=1002">
+</head>
+
+<body>
+    <!-- Animated Background Shapes -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Background Cursor Glow -->
+    <div class="bg-cursor-glow"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- tsParticles Background -->
+    <div id="tsparticles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <img src="Hino_Logo1_4.png" alt="Hinnovation Logo" id="logo-white" class="logo-img" width="250"
+                    loading="lazy" decoding="async" style="color:transparent">
+                <img src="Big_logo.png" alt="Hinnovation Logo" id="logo-color" class="logo-img" width="250"
+                    loading="lazy" decoding="async" style="color:transparent">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#work">Our Work</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#clients">Clients</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="glass-toggle" aria-label="Toggle theme">
+                    <div class="toggle-track">
+                        <span class="toggle-label light">Light</span>
+                        <span class="toggle-label dark">Dark</span>
+                        <div class="toggle-thumb">
+                            <div class="thumb-glow"></div>
+                            <div class="thumb-glass"></div>
+                            <div class="thumb-content">
+                                <i data-lucide="sun" class="sun-icon"></i>
+                                <i data-lucide="moon" class="moon-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+                <a href="#contact" class="btn btn-primary contact-btn hide-mobile">Contact Us</a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav" id="mobile-nav">
+            <ul class="mobile-nav-links">
+                <li><a href="#about" class="mobile-link">About</a></li>
+                <li><a href="#services" class="mobile-link">Services</a></li>
+                <li><a href="#products" class="mobile-link">Products</a></li>
+                <li><a href="#work" class="mobile-link">Our Work</a></li>
+                <li><a href="#team" class="mobile-link">Team</a></li>
+                <li><a href="#clients" class="mobile-link">Clients</a></li>
+                <li><a href="#contact" class="btn btn-primary mobile-link mt-4"
+                        style="text-align: center; display: block;">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <!-- Slider Backgrounds -->
+            <div class="hero-slider">
+                <div class="slide active" style="background-image: url('hero-1.png')"></div>
+                <div class="slide" style="background-image: url('hero-2.png')"></div>
+                <div class="slide" style="background-image: url('hero-3.png')"></div>
+                <div class="slide" style="background-image: url('hero-4.png')"></div>
+                <div class="slider-overlay"></div>
+            </div>
+
+            <div class="hero-bg-glow"></div>
+            <div class="hero-bg-glow-2"></div>
+            <div class="container hero-content">
+                <h1 id="hero-title" data-aos="fade-up" data-aos-duration="1000">Accelerate Digital <br><span
+                        class="gradient-text">Transformation</span></h1>
+                <p id="hero-desc" class="subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">We blend academic
+                    rigor with rich practical experience to build high-end, innovative software products. A software
+                    development organization with a difference.</p>
+                <div class="hero-actions" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <a href="#products" class="btn btn-primary">Explore Our Products</a>
+                    <a href="#about" class="btn btn-outline">Who We Are</a>
+                </div>
+            </div>
+
+            <!-- Slider Navigation -->
+            <div class="slider-nav">
+                <button class="nav-btn prev-btn" id="hero-prev" aria-label="Previous Slide">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn" id="hero-next" aria-label="Next Slide">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-grid glass-panel highlight-panel">
+                    <div class="about-text" data-aos="fade-right" data-aos-duration="800">
+                        <span class="badge">About the Company</span>
+                        <h2>Innovation Built on <br><span class="text-accent">Knowledge</span></h2>
+                        <p>Promoted by a group of academicians and professionals in 2003, Hinnovation Research Centre
+                            Pvt. Ltd. (HRCL) blends IIT/IIM background with rich practical experience in educational
+                            institutes and industries.</p>
+                        <p>Our ideas and values are the guiding force in developing high-end innovative integrated
+                            research software products. We specialize in providing end-to-end IT solutions, leveraging
+                            the latest technologies to deliver unparalleled value to our clients.</p>
+                        <a href="#contact" class="btn btn-outline" style="margin-top: 1rem;">Work With Us</a>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item" data-tilt data-aos="fade-up" data-aos-delay="100">
+                            <i data-lucide="graduation-cap" class="stat-icon"></i>
+                            <h4>Education Focus</h4>
+                            <p>100% education based research centre creating targeted solutions.</p>
+                        </div>
+                        <div class="stat-item" data-tilt data-aos="fade-up" data-aos-delay="200">
+                            <i data-lucide="share-2" class="stat-icon text-accent"></i>
+                            <h4>Open Platform</h4>
+                            <p>A knowledge-exchange platform promoting collaborative learning.</p>
+                        </div>
+                        <div class="stat-item" data-tilt data-aos="fade-up" data-aos-delay="300">
+                            <i data-lucide="award" class="stat-icon"></i>
+                            <h4>Approved Member</h4>
+                            <p>Proudly incubated member approved by WBUT.</p>
+                        </div>
+                        <div class="stat-item" data-tilt data-aos="fade-up" data-aos-delay="400">
+                            <i data-lucide="users" class="stat-icon text-accent"></i>
+                            <h4>Experienced Backup</h4>
+                            <p>Driven by an excellent customer support and research team.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services bg-alt">
+            <div class="container">
+                <div class="section-header text-center" data-aos="zoom-in">
+                    <span class="badge">What We Do</span>
+                    <h2>Our Core <span class="text-accent">Services</span></h2>
+                    <p class="subtitle mx-auto">We specialize in delivering high-quality digital solutions tailored to
+                        your unique organizational needs.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon-wrapper gradient-1">
+                            <i data-lucide="layout" class="service-icon"></i>
+                        </div>
+                        <h3>Website Design</h3>
+                        <p>Creating stunning, pixel-perfect, and highly responsive web experiences that captivate users
+                            and drive engagement.</p>
+                    </div>
+
+                    <div class="service-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon-wrapper gradient-2">
+                            <i data-lucide="database" class="service-icon"></i>
+                        </div>
+                        <h3>ERP Solutions</h3>
+                        <p>Enterprise Resource Planning customized to integrate all facets of your business for maximum
+                            operational oversight.</p>
+                    </div>
+
+                    <div class="service-card" data-tilt data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon-wrapper gradient-3">
+                            <i data-lucide="smartphone" class="service-icon"></i>
+                        </div>
+                        <h3>Making Applications</h3>
+                        <p>Full-stack development of robust and scalable mobile and web applications to bring your
+                            complex ideas to life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-header text-center" data-aos="zoom-in">
+                    <span class="badge">Our Solutions</span>
+                    <h2>Software <span>Products</span></h2>
+                    <p class="subtitle mx-auto">High-end integrated software products designed to streamline operations
+                        and enhance productivity.</p>
+                </div>
+
+                <div class="products-grid single-line">
+                    <!-- Educare -->
+                    <div class="product-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-icon-wrapper">
+                            <i data-lucide="book-open" class="product-icon"></i>
+                        </div>
+                        <h3>Educare</h3>
+                        <p>Complete End-to-End Integrated Education Management Solution built for modern institutes.</p>
+
+                    </div>
+
+                    <!-- BookMall -->
+                    <div class="product-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+                        <div class="product-icon-wrapper">
+                            <i data-lucide="library" class="product-icon text-accent"></i>
+                        </div>
+                        <h3>BookMall</h3>
+                        <p>Advanced Digital Library System designed to facilitate entirely paperless transactions.</p>
+
+                    </div>
+
+                    <!-- BenchMark -->
+                    <div class="product-card" data-tilt data-aos="fade-up" data-aos-delay="300">
+                        <div class="product-icon-wrapper">
+                            <i data-lucide="bar-chart-2" class="product-icon"></i>
+                        </div>
+                        <h3>BenchMark</h3>
+                        <p>High-end integrated management solution for robust operational oversight.</p>
+
+                    </div>
+
+                    <!-- ERP -->
+                    <div class="product-card" data-tilt data-aos="fade-up" data-aos-delay="400">
+                        <div class="product-icon-wrapper">
+                            <i data-lucide="layers" class="product-icon text-accent"></i>
+                        </div>
+                        <h3>ERP</h3>
+                        <p>Enterprise Resource Planning customized to integrate all facets of your business.</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Work Section -->
+        <section id="work" class="work bg-alt">
+            <div class="container">
+                <div class="section-header text-center" data-aos="zoom-in">
+                    <span class="badge">Case Studies</span>
+                    <h2>Our <span class="text-accent">Work</span></h2>
+                    <p class="subtitle mx-auto">Discover how we've helped organizations transform their operations
+                        through innovative software solutions.</p>
+                </div>
+
+                <div class="work-grid">
+                    <div class="work-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+                        <div class="work-image" style="background-image: url('hero-1.png')">
+                            <div class="work-overlay">
+                                <a href="#" class="view-project-btn"><i data-lucide="external-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <span class="work-category text-accent">Education</span>
+                            <h4>University Digital Transformation</h4>
+                            <p>Deployment of Educare managing over 50,000 students across 3 campuses.</p>
+                        </div>
+                    </div>
+                    <div class="work-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+                        <div class="work-image" style="background-image: url('hero-2.png')">
+                            <div class="work-overlay">
+                                <a href="#" class="view-project-btn"><i data-lucide="external-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <span class="work-category text-accent">Public Sector</span>
+                            <h4>Paperless Library Initiative</h4>
+                            <p>Implemented BookMall, digitizing 1 million+ assets for a state library network.</p>
+                        </div>
+                    </div>
+                    <div class="work-card" data-tilt data-aos="fade-up" data-aos-delay="300">
+                        <div class="work-image" style="background-image: url('hero-3.png')">
+                            <div class="work-overlay">
+                                <a href="#" class="view-project-btn"><i data-lucide="external-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <span class="work-category text-accent">Enterprise</span>
+                            <h4>Enterprise ERP Rollout</h4>
+                            <p>Custom ERP deployment streamlining supply chain for a manufacturing corp.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team">
+            <div class="container">
+                <div class="section-header text-center" data-aos="zoom-in">
+                    <span class="badge">Our Experts</span>
+                    <h2>The <span class="text-accent">Creative</span> Team</h2>
+                    <p class="subtitle mx-auto">Innovation comes naturally with our dedicated group of experienced
+                        professionals and developers.</p>
+                </div>
+
+                <div class="team-grid single-line">
+                    <div class="team-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+                        <div class="avatar-blob gradient-1">
+                            <div role="img" aria-label="Ronojoy Dutta"
+                                style="width: 100%; height: 100%; background-image: url('Ronojoy1.jpg'); background-size: cover; border-radius: inherit;">
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h4>Ronojoy Dutta</h4>
+                            <p class="role">Team Leader</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                            <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+                        <div class="avatar-blob gradient-2">
+                            <img src="Shuvro.jpeg" alt="Shuvro Mukherjee">
+                        </div>
+                        <div class="team-info">
+                            <h4>Shuvro Mukherjee</h4>
+                            <p class="role">Admin, Team Lead</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card" data-tilt data-aos="fade-up" data-aos-delay="300">
+                        <div class="avatar-blob gradient-3">
+                            <img src="Ayan.jpg" alt="Ayan Sarkar">
+                        </div>
+                        <div class="team-info">
+                            <h4>Ayan Sarkar</h4>
+                            <p class="role">Developer</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                            <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card" data-tilt data-aos="fade-up" data-aos-delay="400">
+                        <div class="avatar-blob gradient-4">
+                            <img src="Dalim.jpeg" alt="Dalim SK">
+                        </div>
+                        <div class="team-info">
+                            <h4>Dalim SK</h4>
+                            <p class="role">Developer</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                            <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card" data-tilt data-aos="fade-up" data-aos-delay="500">
+                        <div class="avatar-blob gradient-1">
+                            <img src="Sourav.jpeg" alt="Sourav Dutta">
+                        </div>
+                        <div class="team-info">
+                            <h4>Sourav Dutta</h4>
+                            <p class="role">Developer</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                            <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Tiered Team Batches (Total 15) -->
+
+                    <!-- Batch A: Next 5 Members (Hidden) -->
+                    <div class="team-card hidden-team-member batch-a" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-2">
+                            <img src="Abhi1.jpeg" alt="Abhijit Barman">
+                        </div>
+                        <div class="team-info">
+                            <h4>Abhijit Barman</h4>
+                            <p class="role">Coder</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card hidden-team-member batch-a" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-3">
+                            <img src="Abhi2.jpg" alt="Abhijit Bhattacharyay">
+                        </div>
+                        <div class="team-info">
+                            <h4>Abhijit Bhattacharyay</h4>
+                            <p class="role">Coder</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card hidden-team-member batch-a" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-4">
+                            <img src="woman.png" alt="Soumali Roy">
+                        </div>
+                        <div class="team-info">
+                            <h4>Soumali Roy</h4>
+                            <p class="role">Coder</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card hidden-team-member batch-a" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-1">
+                            <img src="man.png" alt="Chandan Bachar">
+                        </div>
+                        <div class="team-info">
+                            <h4>Chandan Bachar</h4>
+                            <p class="role">Developer</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card hidden-team-member batch-a" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-2">
+                            <img src="Rajib.jpeg" alt="Rajib Bose">
+                        </div>
+                        <div class="team-info">
+                            <h4>Rajib Bose</h4>
+                            <p class="role">Developer</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Batch B: Final 5 Members (Hidden) -->
+                    <div class="team-card hidden-team-member batch-b" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-3">
+                            <img src="Suparna.jpeg" alt="Suparna Das">
+                        </div>
+                        <div class="team-info">
+                            <h4>Suparna Das</h4>
+                            <p class="role">Coder</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card hidden-team-member batch-b" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-4">
+                            <img src="man.png" alt="Manik Das">
+                        </div>
+                        <div class="team-info">
+                            <h4>Manik Das</h4>
+                            <p class="role">Coder</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card hidden-team-member batch-b" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-1">
+                            <img src="Ruma.jpeg" alt="Ruma Chakraborty">
+                        </div>
+                        <div class="team-info">
+                            <h4>Ruma Chakraborty</h4>
+                            <p class="role">Coder</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card hidden-team-member batch-b" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-2">
+                            <img src="woman.png" alt="Pampa Das">
+                        </div>
+                        <div class="team-info">
+                            <h4>Pampa Das</h4>
+                            <p class="role">Developer, Coder</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card hidden-team-member batch-b" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-3">
+                            <img src="Tanusree.jpeg" alt="Tanusree Dasgupta">
+                        </div>
+                        <div class="team-info">
+                            <h4>Tanusree Dasgupta</h4>
+                            <p class="role">Developer</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Batch C: Next 5 Members (Hidden) -->
+                    <div class="team-card hidden-team-member batch-c" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-4">
+                            <img src="Debolina.jpg" alt="Debolina Bhattacharjee">
+                        </div>
+                        <div class="team-info">
+                            <h4>Debolina Bhattacharjee</h4>
+                            <p class="role">Coder, Developer</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card hidden-team-member batch-c" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-1">
+                            <img src="aditi.jpeg" alt="Aditi Mondal">
+                        </div>
+                        <div class="team-info">
+                            <h4>Aditi Mondal</h4>
+                            <p class="role">Developer</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card hidden-team-member batch-c" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-2">
+                            <img src="man.png" alt="Aniket Mondal">
+                        </div>
+                        <div class="team-info">
+                            <h4>Aniket Mondal</h4>
+                            <p class="role">Coder</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card hidden-team-member batch-c" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-3">
+                            <img src="man.png" alt="Soumyadip Roy">
+                        </div>
+                        <div class="team-info">
+                            <h4>Soumyadip Roy</h4>
+                            <p class="role">Web Developer</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card hidden-team-member batch-c" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-4">
+                            <img src="Rupal.jpeg" alt="Rupal Kumbhakar">
+                        </div>
+                        <div class="team-info">
+                            <h4>Rupal Kumbhakar</h4>
+                            <p class="role">Coder</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Batch D: Final 2 Members (Hidden) -->
+                    <div class="team-card hidden-team-member batch-d" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-1">
+                            <img src="Tarak.jpg" alt="Tarak Pramanik">
+                        </div>
+                        <div class="team-info">
+                            <h4>Tarak Pramanik</h4>
+                            <p class="role">Developer</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="team-card hidden-team-member batch-d" style="display: none;" data-tilt>
+                        <div class="avatar-blob gradient-2">
+                            <img src="Kamal.jpeg" alt="Kamal Malik">
+                        </div>
+                        <div class="team-info">
+                            <h4>Kamal Malik</h4>
+                            <p class="role">Developer</p>
+                        </div>
+                        <div class="social-overlay">
+                            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top: 4rem;">
+                    <button id="load-more-team" class="btn btn-team-toggle">Load More <i data-lucide="chevron-down"
+                            style="margin-left: 8px; width: 18px;"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients Section -->
+        <section id="clients" class="clients bg-alt">
+            <div class="container">
+                <div class="section-header text-center" data-aos="zoom-in">
+                    <span class="badge">Trusted By</span>
+                    <h2>Our <span class="text-accent">Clients</span></h2>
+                    <p class="subtitle mx-auto">We are proud to work with some of the most innovative organizations and
+                        educational institutes.</p>
+                </div>
+
+                <div class="clients-marquee-wrapper">
+                    <div class="clients-marquee">
+                        <div class="client-item">
+                            <div class="client-logo-item">
+                                <a href="https://thebssschool.com/">
+                                    <img src="BSS-75_LOGO-1-300x160.png" alt="Client Logo">
+                                </a>
+                            </div>
+                            <span class="client-name">The BSS School</span>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-logo-item">
+                                <a href="https://sivanathsastricollege.org/">
+                                    <img src="logo_4.png" alt="Client Logo">
+                                </a>
+                            </div>
+                            <span class="client-name">Sivanath Sastri College</span>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-logo-item">
+                                <a href="https://sonarpurmahavidyalaya.com/">
+                                    <img src="logo-transparent-300x300.png" alt="Client Logo">
+                                </a>
+                            </div>
+                            <span class="client-name">Sonarpur Mahavidyalaya</span>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-logo-item">
+                                <a href="https://prabharanipublicschool.edu.in/">
+                                    <img src="imageedit_1_7951157308.png" alt="Client Logo">
+                                </a>
+                            </div>
+                            <span class="client-name">Prabha Rani Public School</span>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-logo-item">
+                                <a href="https://www.shrishikshayatanschool.com/">
+                                    <img src="SSS.png" alt="Client Logo">
+                                </a>
+                            </div>
+                            <span class="client-name">Shri Shikshayatan School</span>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-logo-item">
+                                <a href="https://shrishikshayatancollege.org/">
+                                    <img src="SSC_LogoTransperant-1.png" alt="Client Logo">
+                                </a>
+                            </div>
+                            <span class="client-name">Shri Shikshayatan College</span>
+                        </div>
+
+                        <!-- Duplicated for scrolling effect -->
+                        <div class="client-item">
+                            <div class="client-logo-item">
+                                <a href="https://shrishikshayatancollege.org/">
+                                    <img src="SSC_LogoTransperant-1.png" alt="Client Logo">
+                                </a>
+                            </div>
+                            <span class="client-name">Shri Shikshayatan College</span>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-logo-item">
+                                <a href="https://www.shrishikshayatanschool.com/">
+                                    <img src="SSS.png" alt="Client Logo">
+                                </a>
+                            </div>
+                            <span class="client-name">Shri Shikshayatan School</span>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-logo-item">
+                                <a href="https://prabharanipublicschool.edu.in/">
+                                    <img src="imageedit_1_7951157308.png" alt="Client Logo">
+                                </a>
+                            </div>
+                            <span class="client-name">Prabha Rani Public School</span>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-logo-item">
+                                <a href="https://sonarpurmahavidyalaya.com/">
+                                    <img src="logo-transparent-300x300.png" alt="Client Logo">
+                                </a>
+                            </div>
+                            <span class="client-name">Sonarpur Mahavidyalaya</span>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-logo-item">
+                                <a href="https://sivanathsastricollege.org/">
+                                    <img src="logo_4.png" alt="Client Logo">
+                                </a>
+                            </div>
+                            <span class="client-name">Sivanath Sastri College</span>
+                        </div>
+                        <div class="client-item">
+                            <div class="client-logo-item">
+                                <a href="https://thebssschool.com/">
+                                    <img src="BSS-75_LOGO-1-300x160.png" alt="Client Logo">
+                                </a>
+                            </div>
+                            <span class="client-name">The BSS School</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section relative">
+            <div class="contact-ambient-orb"></div>
+            <div class="container relative z-10">
+                <div class="section-header text-center mb-12" data-aos="zoom-in">
+                    <span class="badge">Get In Touch</span>
+                    <h2>Let's build something <span class="text-accent">amazing</span></h2>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-info" data-aos="fade-right">
+                        <h3>Contact Information</h3>
+                        <p class="subtitle" style="margin-bottom: 2rem;">Reach out to us to start the conversation. We
+                            typically respond within 24 hours.</p>
+
+                        <div class="contact-card group">
+                            <div class="icon-box"><i data-lucide="map-pin"></i></div>
+                            <div>
+                                <h4>Headquarters</h4>
+                                <p>Block - EP and GP, Salt Lake Electronic Complex<br>Plot No. N1, "The Summit" Block-1,
+                                    12th Floor<br>Room No. 1217, Sector V, Saltlake<br>Kolkata - 700 091</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card group">
+                            <div class="icon-box"><i data-lucide="phone"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>Ph: 9831095291 / 9903063053</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card group">
+                            <div class="icon-box"><i data-lucide="mail"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contact@hinnovation.in</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-column" data-aos="fade-up" data-aos-delay="200">
+                        <div class="contact-form-container glass-panel">
+                            <form class="contact-form">
+                                <div class="form-group">
+                                    <input type="text" id="name" required placeholder=" ">
+                                    <label for="name">Your Name</label>
+                                    <span class="input-highlight"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="email" required placeholder=" ">
+                                    <label for="email">Email Address</label>
+                                    <span class="input-highlight"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input id="message" required placeholder=" " rows="4">
+                                    <label for="message">How can we help?</label>
+                                    <span class="input-highlight"></span>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-glow"
+                                    style="width: 100%; margin-top: 1rem;">Send Message <i data-lucide="send"
+                                        style="margin-left: 0.5rem; width: 18px;"></i></button>
+                            </form>
+                        </div>
+
+                        <!-- Google Map below the form -->
+                        <div class="contact-map-embed">
+                            <iframe
+                                src="https://maps.google.com/maps?q=The+Summit,+Plot+N1,+Sector+V,+Salt+Lake,+Kolkata+700091&output=embed&z=16"
+                                width="100%" height="100%" style="border:0; display:block;" allowfullscreen=""
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                title="Hinnovation Office Map">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-minimal">
+            <div class="container text-center">
+                <a href="#" class="logo"
+                    style="display: inline-block; margin-bottom: 1rem;">Hinnovation<span>.</span></a>
+                <p style="color: var(--text-secondary); font-weight: 500;">&copy; 2024 Hinnovation Research Centre Pvt.
+                    Ltd. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Back to Top Button: The Orbital Launcher -->
+    <button id="back-to-top" class="back-to-top-launcher" aria-label="Launch to Top">
+        <svg class="progress-ring" width="60" height="60">
+            <defs>
+                <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="var(--accent-blue)" />
+                    <stop offset="100%" stop-color="var(--accent-emerald)" />
+                </linearGradient>
+                <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+            </defs>
+            <circle class="progress-ring-track" stroke="rgba(255,255,255,0.05)" stroke-width="4" fill="transparent"
+                r="26" cx="30" cy="30" />
+            <circle class="progress-ring-circle" stroke="url(#neonGradient)" stroke-width="4" fill="transparent" r="26"
+                cx="30" cy="30" filter="url(#neonGlow)" />
+        </svg>
+        <div class="launcher-content">
+            <i data-lucide="rocket" class="rocket-icon"></i>
+            <i data-lucide="arrow-up" class="arrow-icon"></i>
+        </div>
+        <div class="ignition-glow"></div>
+    </button>
+
+    <!-- Scripts -->
+    <!-- tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2.12.0/tsparticles.engine.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.min.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="script.js?v=6"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

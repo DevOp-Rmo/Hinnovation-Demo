@@ -1248,7 +1248,8 @@ section {
 }
 
 .products-grid.single-line {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
 }
 
 .product-card {
@@ -2509,4 +2510,21 @@ section {
   .toggle-label {
     display: none !important; /* Hide labels on mobile to save space */
   }
+}
+
+/* Loading Spinner for Submit Button */
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.8s linear infinite;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }

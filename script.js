@@ -262,7 +262,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const batchA = document.querySelectorAll('.batch-a');
             const batchB = document.querySelectorAll('.batch-b');
             const batchC = document.querySelectorAll('.batch-c');
-            const batchD = document.querySelectorAll('.batch-d');
             
             if (loadStep === 0) {
                 revealBatch(batchA);
@@ -275,15 +274,11 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (loadStep === 2) {
                 revealBatch(batchC);
                 loadStep = 3;
-                this.innerHTML = `Load More <i data-lucide="chevron-down" style="margin-left: 8px; width: 18px;"></i>`;
-            } else if (loadStep === 3) {
-                revealBatch(batchD);
-                loadStep = 4;
                 this.innerHTML = `Hide <i data-lucide="chevron-up" style="margin-left: 8px; width: 18px;"></i>`;
                 this.classList.add('expanded');
             } else {
-                // Reset: Hide all batches (Back to 5)
-                [...batchA, ...batchB, ...batchC, ...batchD].forEach(member => {
+                // Reset: Hide all batches (Back to original)
+                [...batchA, ...batchB, ...batchC].forEach(member => {
                     member.style.display = 'none';
                     member.style.animationDelay = '';
                     member.classList.remove('aos-init', 'aos-animate', 'team-card-reveal');
@@ -396,6 +391,74 @@ document.addEventListener('DOMContentLoaded', () => {
                     launcherBtn.classList.remove('visible');
                 }, 800);
             }, 400); // 400ms "Ignition" phase
+        });
+    }
+
+    // --- Contact Form AJAX Submission ---
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); 
+            
+            const formData = new FormData(contactForm);
+            
+            // UI Feedback: Loading state
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Sending... <span class="loading-spinner"></span>';
+            }
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Success
+                    formStatus.style.display = 'block';
+                    formStatus.style.backgroundColor = 'rgba(16, 185, 129, 0.15)';
+                    formStatus.style.color = '#10B981';
+                    formStatus.style.border = '1px solid rgba(16, 185, 129, 0.3)';
+                    formStatus.textContent = 'Thanks! Your message has been sent successfully.';
+                    contactForm.reset();
+                    
+                    // Reset button after 5 seconds
+                    setTimeout(() => {
+                        formStatus.style.display = 'none';
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = 'Send Message <i data-lucide="send" style="margin-left: 0.5rem; width: 18px;"></i>';
+                            if(typeof lucide !== 'undefined') lucide.createIcons();
+                        }
+                    }, 5000);
+                } else {
+                    // Error from server
+                    const result = await response.json();
+                    console.error('Formspree Error:', result);
+                    throw new Error(result.error || 'Submission failed');
+                }
+            } catch (error) {
+                // Network or other error
+                console.error('Submission Error:', error);
+                formStatus.style.display = 'block';
+                formStatus.style.backgroundColor = 'rgba(239, 68, 68, 0.15)';
+                formStatus.style.color = '#EF4444';
+                formStatus.style.border = '1px solid rgba(239, 68, 68, 0.3)';
+                formStatus.textContent = 'Oops! There was a problem submitting your form.';
+                
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Send Message <i data-lucide="send" style="margin-left: 0.5rem; width: 18px;"></i>';
+                    if(typeof lucide !== 'undefined') lucide.createIcons();
+                }
+            }
         });
     }
 });

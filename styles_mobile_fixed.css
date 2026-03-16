@@ -125,18 +125,35 @@ body {
   0% {
     transform: scale(1) translate(0, 0) rotate(0deg);
   }
-
   33% {
     transform: scale(1.1) translate(5%, 5%) rotate(5deg);
   }
-
   66% {
     transform: scale(0.9) translate(-5%, 10%) rotate(-5deg);
   }
-
   100% {
     transform: scale(1) translate(0, -5%) rotate(0deg);
   }
+}
+
+/* Mobile Drift Specifics - Enhanced Randomized Feel */
+@media (max-width: 768px) {
+  .shape-1 { animation: floatMobile1 25s infinite alternate ease-in-out; }
+  .shape-2 { animation: floatMobile2 30s infinite alternate ease-in-out; }
+  .shape-3 { animation: floatMobile3 28s infinite alternate ease-in-out; }
+}
+
+@keyframes floatMobile1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(15%, 10%) scale(1.1); }
+}
+@keyframes floatMobile2 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-10%, -15%) rotate(15deg); }
+}
+@keyframes floatMobile3 {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.2) translate(-5%, 5%); }
 }
 
 /* Background Cursor Glow */
@@ -151,14 +168,50 @@ body {
   pointer-events: none;
   z-index: -15;
   transform: translate(-50%, -50%);
-  transition: opacity 0.5s ease;
+  transition: opacity 1.5s ease;
   mix-blend-mode: screen;
+  opacity: 0; /* Hidden by default */
 }
 
 [data-theme="light"] .bg-cursor-glow,
 :root:not([data-theme="dark"]) .bg-cursor-glow {
   background: radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, transparent 60%);
-  mix-blend-mode: multiply;
+  mix-blend-mode: screen; /* Fixed "black spot" by removing multiply */
+}
+
+/* Strictly hide cursor elements on mobile to prevent ghost dots */
+@media (max-width: 768px) {
+  .cursor-dot, .cursor-outline {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Touch Feedback Experience */
+@media (hover: none) {
+  .btn:active, 
+  .team-card:active, 
+  .product-card:active,
+  .client-logo-item:active {
+    transform: scale(0.96);
+    filter: brightness(1.2);
+    transition: transform 0.1s ease;
+  }
+  
+  .glass-panel:active {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Performance optimization for Light Mode - Remove heavy blurs */
+  :root:not([data-theme="dark"]) .stat-item,
+  :root:not([data-theme="dark"]) .service-card,
+  :root:not([data-theme="dark"]) .glass-panel,
+  :root:not([data-theme="dark"]) .navbar.scrolled {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
 }
 
 
@@ -2146,8 +2199,9 @@ section {
   transform: translate(-50%, -50%);
   z-index: 9999;
   pointer-events: none;
-  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  transition: width 0.2s, height 0.2s, background-color 0.2s, opacity 0.3s;
   mix-blend-mode: difference;
+  opacity: 0; /* Hidden by default */
 }
 
 .cursor-outline {
@@ -2161,8 +2215,9 @@ section {
   transform: translate(-50%, -50%);
   z-index: 9998;
   pointer-events: none;
-  transition: width 0.2s, height 0.2s, border-color 0.2s, opacity 0.2s;
+  transition: width 0.2s, height 0.2s, border-color 0.2s, opacity 0.3s;
   mix-blend-mode: difference;
+  opacity: 0; /* Hidden by default */
 }
 
 /* Hover effect for links/buttons */

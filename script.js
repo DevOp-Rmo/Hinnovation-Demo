@@ -46,41 +46,66 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Custom Cursor ---
+    // --- Custom Cursor & Background Glow ---
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
     const bgCursorGlow = document.querySelector('.bg-cursor-glow');
     
-    if (cursorDot && cursorOutline && window.matchMedia("(pointer: fine)").matches) {
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-            
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-            
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
+    // Desktop / Mouse logic
+    if (window.matchMedia("(pointer: fine)").matches) {
+        if (cursorDot && cursorOutline) {
+            window.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
+                
+                // Show elements on first move
+                cursorDot.style.opacity = '1';
+                cursorOutline.style.opacity = '1';
+                if(bgCursorGlow) bgCursorGlow.style.opacity = '1';
 
-            if(bgCursorGlow) {
-                bgCursorGlow.animate({
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+                
+                cursorOutline.animate({
                     left: `${posX}px`,
                     top: `${posY}px`
-                }, { duration: 2000, fill: "forwards" });
-            }
-        });
+                }, { duration: 500, fill: "forwards" });
 
-        const interactiveElements = document.querySelectorAll('a, button, input, textarea');
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                document.body.classList.add('cursor-hover-active');
+                if(bgCursorGlow) {
+                    bgCursorGlow.animate({
+                        left: `${posX}px`,
+                        top: `${posY}px`
+                    }, { duration: 2000, fill: "forwards" });
+                }
             });
-            el.addEventListener('mouseleave', () => {
-                document.body.classList.remove('cursor-hover-active');
+
+            const interactiveElements = document.querySelectorAll('a, button, input, textarea');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    document.body.classList.add('cursor-hover-active');
+                });
+                el.addEventListener('mouseleave', () => {
+                    document.body.classList.remove('cursor-hover-active');
+                });
             });
-        });
+        }
+    } 
+    // Mobile / Touch logic
+    else if (bgCursorGlow) {
+        const handleTouch = (e) => {
+            const touch = e.touches[0];
+            const posX = touch.clientX;
+            const posY = touch.clientY;
+
+            bgCursorGlow.style.opacity = '1';
+            bgCursorGlow.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 1200, fill: "forwards", easing: 'ease-out' });
+        };
+
+        window.addEventListener('touchstart', handleTouch, { passive: true });
+        window.addEventListener('touchmove', handleTouch, { passive: true });
     }
 
     // --- tsParticles Background ---

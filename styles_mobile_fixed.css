@@ -2444,22 +2444,24 @@ section {
 
 /* Mobile UI Fixes - Final Overrides */
 @media (max-width: 768px) {
-  /* 1. Hero Slider Buttons Repositioning */
+  /* 1. Hero Slider Buttons Repositioning - BACK TO SIDE (Reference Image 1) */
   .slider-nav {
-    top: auto !important;
-    bottom: 15% !important;
-    transform: none !important;
-    justify-content: center !important;
-    gap: 5rem !important;
-    padding: 0 !important;
-    pointer-events: auto !important;
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
+    padding: 0 10px !important; /* Push to edges */
+    pointer-events: none !important; /* Allow clicks to pass through to text */
   }
   
   .nav-btn {
-    width: 50px !important;
-    height: 50px !important;
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    width: 45px !important;
+    height: 45px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
     pointer-events: auto !important;
   }
 
@@ -2472,9 +2474,10 @@ section {
     display: block !important;
   }
 
-  /* 3. Hero Adjustments for mobile to prevent overlapping */
+  /* 3. Hero Adjustments for mobile - PROTECT TEXT from side buttons */
   .hero-content {
-    padding-bottom: 120px !important;
+    padding: 0 55px !important; /* Add padding to keep text clear of buttons */
+    padding-bottom: 60px !important;
   }
 
   .hero h1 {

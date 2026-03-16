@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Theme Management ---
     const themeToggleBtn = document.getElementById('theme-toggle');
-    
+
     // Check for saved theme preference, default to 'light' if none exists
     const currentTheme = localStorage.getItem('theme') || 'light';
-    
+
     // Apply logic based on the theme
     function applyTheme(theme) {
         if (theme === 'dark') {
@@ -13,22 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.removeAttribute('data-theme');
         }
     }
-    
+
     // Apply saved or default theme on load
     applyTheme(currentTheme);
-    
+
     // Toggle theme event
     themeToggleBtn.addEventListener('click', () => {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         const newTheme = isDark ? 'light' : 'dark';
-        
+
         applyTheme(newTheme);
         localStorage.setItem('theme', newTheme);
     });
 
     // Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -50,28 +50,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
     const bgCursorGlow = document.querySelector('.bg-cursor-glow');
-    
+
     // Desktop / Mouse logic
     if (window.matchMedia("(pointer: fine)").matches) {
         if (cursorDot && cursorOutline) {
             window.addEventListener('mousemove', (e) => {
                 const posX = e.clientX;
                 const posY = e.clientY;
-                
+
                 // Show elements on first move
                 cursorDot.style.opacity = '1';
                 cursorOutline.style.opacity = '1';
-                if(bgCursorGlow) bgCursorGlow.style.opacity = '1';
+                if (bgCursorGlow) bgCursorGlow.style.opacity = '1';
 
                 cursorDot.style.left = `${posX}px`;
                 cursorDot.style.top = `${posY}px`;
-                
+
                 cursorOutline.animate({
                     left: `${posX}px`,
                     top: `${posY}px`
                 }, { duration: 500, fill: "forwards" });
 
-                if(bgCursorGlow) {
+                if (bgCursorGlow) {
                     bgCursorGlow.animate({
                         left: `${posX}px`,
                         top: `${posY}px`
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         }
-    } 
+    }
     // Mobile / Touch logic
     else if (bgCursorGlow) {
         const handleTouch = (e) => {
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('navbar').classList.toggle('menu-active');
             const icon = mobileNav.classList.contains('active') ? 'x' : 'menu';
             mobileMenuBtn.innerHTML = `<i data-lucide="${icon}"></i>`;
-            if(typeof lucide !== 'undefined') lucide.createIcons();
+            if (typeof lucide !== 'undefined') lucide.createIcons();
         });
 
         mobileLinks.forEach(link => {
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileNav.classList.remove('active');
                 document.getElementById('navbar').classList.remove('menu-active');
                 mobileMenuBtn.innerHTML = `<i data-lucide="menu"></i>`;
-                if(typeof lucide !== 'undefined') lucide.createIcons();
+                if (typeof lucide !== 'undefined') lucide.createIcons();
             });
         });
     }
@@ -187,20 +187,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const heroContent = [
         {
-            title: 'Java Base <br><span class="gradient-text">Research Systems</span>',
-            desc: 'Pioneering high-performance Java-based research tools and integrated software products since 2003.'
+            title: 'Innovative <br><span class="gradient-text">IRP Solutions</span>',
+            desc: 'Comprehensive IRP systems tailored for modern organizational governance and efficiency.'
         },
         {
-            title: 'Intelligent <br><span class="gradient-text">ERP Solutions</span>',
-            desc: 'Streamline your organization with our robust, scalable ERP systems designed for educational and industrial excellence.'
+            title: 'Mobile <br><span class="gradient-text">App Development</span>',
+            desc: 'High-performance Android and iOS apps with seamless user experiences.'
         },
         {
-            title: 'Modern <br><span class="gradient-text">Website Design</span>',
-            desc: 'Creating premium, high-converting digital experiences that blend aesthetic beauty with technical precision.'
+            title: 'Expert <br><span class="gradient-text">Web Development</span>',
+            desc: 'Creating stunning, responsive, and secure websites that drive engagement better results for your business.'
         },
         {
-            title: 'Making <br><span class="gradient-text">Applications</span>',
-            desc: 'From mobile to cloud, we build scalable full-stack applications that empower your digital future.'
+            title: 'Strategic <br><span class="gradient-text">Digital Marketing</span>',
+            desc: 'Elevate your brand presence with digital marketing strategies that connect you with your target audience.'
         }
     ];
 
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSlide = index;
         if (currentSlide >= slides.length) currentSlide = 0;
         if (currentSlide < 0) currentSlide = slides.length - 1;
-        
+
         slides[currentSlide].classList.add('active');
         updateHeroText(currentSlide);
         resetTimer();
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nextBtn) nextBtn.addEventListener('click', nextSlide);
 
     // Initial icon creation for newly added buttons
-    if(typeof lucide !== 'undefined') lucide.createIcons();
+    if (typeof lucide !== 'undefined') lucide.createIcons();
 
     // Initialize first slide text
     if (heroTitle && heroDesc) {
@@ -282,12 +282,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 member.classList.add('team-card-reveal', 'aos-init', 'aos-animate');
             });
         }
-        
-        loadMoreTeamBtn.addEventListener('click', function() {
+
+        loadMoreTeamBtn.addEventListener('click', function () {
             const batchA = document.querySelectorAll('.batch-a');
             const batchB = document.querySelectorAll('.batch-b');
             const batchC = document.querySelectorAll('.batch-c');
-            
+
             if (loadStep === 0) {
                 revealBatch(batchA);
                 loadStep = 1;
@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => this.classList.remove('pulse-ring'), 700);
                 document.getElementById('team').scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
-            
+
             if (typeof lucide !== 'undefined') lucide.createIcons();
             if (typeof AOS !== 'undefined') {
                 setTimeout(() => AOS.refresh(), 150);
@@ -332,24 +332,24 @@ document.addEventListener('DOMContentLoaded', () => {
             // Calculate mouse position relative to card center
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
+
             // Limit max rotation degrees
             const maxRotate = 8;
-            
+
             const rotateX = ((y - centerY) / centerY) * -maxRotate;
             const rotateY = ((x - centerX) / centerX) * maxRotate;
-            
+
             el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
         });
-        
+
         el.addEventListener('mouseleave', () => {
             // Reset transform on mouse leave
             el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
             setTimeout(() => {
-                if(!el.matches(':hover')){
+                if (!el.matches(':hover')) {
                     el.style.transform = '';
                 }
             }, 300);
@@ -361,19 +361,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const ringCircle = launcherBtn.querySelector('.progress-ring-circle');
         const radius = ringCircle.r.baseVal.value;
         const circumference = 2 * Math.PI * radius;
-        
+
         ringCircle.style.strokeDasharray = `${circumference} ${circumference}`;
         ringCircle.style.strokeDashoffset = circumference;
-        
+
         function updateProgress(percent) {
             // Recalculate radius/circumference in case of resize
             const currentRadius = ringCircle.r.baseVal.value;
             const currentCircumference = 2 * Math.PI * currentRadius;
-            
+
             ringCircle.style.strokeDasharray = `${currentCircumference} ${currentCircumference}`;
             const offset = currentCircumference - (percent / 100) * currentCircumference;
             ringCircle.style.strokeDashoffset = offset;
-            
+
             // Dynamic Neon Effect: Change glow intensity based on progress
             if (percent > 90) {
                 ringCircle.style.filter = 'url(#neonGlow) brightness(1.5)';
@@ -381,35 +381,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 ringCircle.style.filter = 'url(#neonGlow)';
             }
         }
-        
+
         window.addEventListener('scroll', () => {
             const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
             updateProgress(scrollPercent);
-            
+
             if (window.scrollY > 400) {
                 launcherBtn.classList.add('visible');
             } else {
                 launcherBtn.classList.remove('visible');
             }
         });
-        
+
         launcherBtn.addEventListener('click', () => {
             if (launcherBtn.classList.contains('launching')) return;
 
             // Step 1: Ignition (Glow and Pulse)
             launcherBtn.classList.add('igniting');
-            
+
             setTimeout(() => {
                 // Step 2: The Launch
                 launcherBtn.classList.remove('igniting');
                 launcherBtn.classList.add('launching');
-                
+
                 // Smooth scroll to top with high precision
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
-                
+
                 // Step 3: Reset after return
                 setTimeout(() => {
                     launcherBtn.classList.remove('launching');
@@ -426,10 +426,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault(); 
-            
+            e.preventDefault();
+
             const formData = new FormData(contactForm);
-            
+
             // UI Feedback: Loading state
             if (submitBtn) {
                 submitBtn.disabled = true;
@@ -453,14 +453,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     formStatus.style.border = '1px solid rgba(16, 185, 129, 0.3)';
                     formStatus.textContent = 'Thanks! Your message has been sent successfully.';
                     contactForm.reset();
-                    
+
                     // Reset button after 5 seconds
                     setTimeout(() => {
                         formStatus.style.display = 'none';
                         if (submitBtn) {
                             submitBtn.disabled = false;
                             submitBtn.innerHTML = 'Send Message <i data-lucide="send" style="margin-left: 0.5rem; width: 18px;"></i>';
-                            if(typeof lucide !== 'undefined') lucide.createIcons();
+                            if (typeof lucide !== 'undefined') lucide.createIcons();
                         }
                     }, 5000);
                 } else {
@@ -477,11 +477,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 formStatus.style.color = '#EF4444';
                 formStatus.style.border = '1px solid rgba(239, 68, 68, 0.3)';
                 formStatus.textContent = 'Oops! There was a problem submitting your form.';
-                
+
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = 'Send Message <i data-lucide="send" style="margin-left: 0.5rem; width: 18px;"></i>';
-                    if(typeof lucide !== 'undefined') lucide.createIcons();
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
                 }
             }
         });
